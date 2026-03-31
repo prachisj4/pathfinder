@@ -54,9 +54,9 @@ export default function DashboardPage({ user, navigate }) {
 
   if (loading) return (
     <div style={{
-      minHeight: "100vh", background: "#0a0a0f", display: "flex",
+      minHeight: "100vh", background: "#020617", display: "flex",
       alignItems: "center", justifyContent: "center",
-      fontFamily: "'DM Sans', sans-serif", color: "white"
+      fontFamily: "'Plus Jakarta Sans', sans-serif", color: "white"
     }}>
       <div style={{ textAlign: "center" }}>
         <div style={{ fontSize: "48px", marginBottom: "16px" }}>🧭</div>
@@ -67,8 +67,8 @@ export default function DashboardPage({ user, navigate }) {
 
   return (
     <div style={{
-      minHeight: "100vh", background: "#0a0a0f", color: "#f0f0f0",
-      fontFamily: "'DM Sans', sans-serif"
+      minHeight: "100vh", background: "#020617", color: "#f0f0f0",
+      fontFamily: "'Plus Jakarta Sans', sans-serif"
     }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
@@ -80,13 +80,13 @@ export default function DashboardPage({ user, navigate }) {
 
         {/* Sidebar */}
         <div style={{
-          width: "240px", background: "rgba(255,255,255,0.02)",
-          borderRight: "1px solid rgba(255,255,255,0.06)",
+          width: "240px", background: "rgba(255,255,255,0.015)",
+          borderRight: "1px solid rgba(255,255,255,0.12)",
           padding: "28px 20px", display: "flex", flexDirection: "column",
           position: "sticky", top: 0, height: "100vh"
         }}>
-          <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 800, marginBottom: "32px" }}>
-            🧭 PathFinder<span style={{ color: "#6366f1" }}>AI</span>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: "18px", fontWeight: 800, marginBottom: "32px" }}>
+            🧭 PathFinder<span style={{ color: "#FF0080" }}>AI</span>
           </div>
 
           <nav style={{ flex: 1 }}>
@@ -101,9 +101,9 @@ export default function DashboardPage({ user, navigate }) {
                   width: "100%", padding: "12px 14px", borderRadius: "10px",
                   background: item.active ? "rgba(99,102,241,0.15)" : "none",
                   border: item.active ? "1px solid rgba(99,102,241,0.25)" : "1px solid transparent",
-                  color: item.active ? "#a5b4fc" : "rgba(255,255,255,0.5)",
+                  color: item.active ? "#fbcfe8" : "rgba(255,255,255,0.5)",
                   cursor: "pointer", fontSize: "14px", marginBottom: "6px",
-                  fontFamily: "'DM Sans', sans-serif", textAlign: "left"
+                  fontFamily: "'Plus Jakarta Sans', sans-serif", textAlign: "left"
                 }}>
                 {item.icon} {item.label}
               </button>
@@ -112,7 +112,7 @@ export default function DashboardPage({ user, navigate }) {
 
           {/* User info */}
           <div style={{
-            borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "20px"
+            borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: "20px"
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
               {user?.photoURL && (
@@ -125,9 +125,9 @@ export default function DashboardPage({ user, navigate }) {
             </div>
             <button onClick={handleSignOut} style={{
               width: "100%", padding: "10px", borderRadius: "8px",
-              background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.12)",
               color: "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: "13px",
-              fontFamily: "'DM Sans', sans-serif"
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
             }}>Sign Out</button>
           </div>
         </div>
@@ -138,17 +138,17 @@ export default function DashboardPage({ user, navigate }) {
           {assessments.length === 0 ? (
             <div style={{ textAlign: "center", paddingTop: "80px" }}>
               <div style={{ fontSize: "64px", marginBottom: "20px" }}>🗺️</div>
-              <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "28px", marginBottom: "12px" }}>
+              <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "28px", marginBottom: "12px" }}>
                 No assessments yet
               </h2>
               <p style={{ color: "rgba(255,255,255,0.4)", marginBottom: "28px" }}>
                 Take your first assessment to get a personalized career roadmap
               </p>
               <button onClick={() => navigate("assessment")} style={{
-                background: "linear-gradient(135deg, #6366f1, #8b5cf6)", border: "none",
+                background: "linear-gradient(135deg, #FF0080, #7928CA)", border: "none",
                 color: "white", padding: "14px 32px", borderRadius: "12px",
                 cursor: "pointer", fontSize: "15px", fontWeight: 600,
-                fontFamily: "'DM Sans', sans-serif"
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
               }}>
                 Start My Assessment →
               </button>
@@ -156,7 +156,7 @@ export default function DashboardPage({ user, navigate }) {
           ) : (
             <>
               <h1 style={{
-                fontFamily: "'Syne', sans-serif", fontSize: "32px",
+                fontFamily: "'Outfit', sans-serif", fontSize: "32px",
                 fontWeight: 800, marginBottom: "8px", letterSpacing: "-0.5px"
               }}>
                 Welcome back, {user?.displayName?.split(" ")[0]}! 👋
@@ -168,17 +168,17 @@ export default function DashboardPage({ user, navigate }) {
               {/* Stats row */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "16px", marginBottom: "36px" }}>
                 {[
-                  { label: "Assessments Taken", value: assessments.length, color: "#6366f1" },
-                  { label: "Roadmap Progress", value: `${progress}%`, color: "#10b981" },
-                  { label: "Milestones Done", value: `${completedCount}/${totalMonths}`, color: "#f59e0b" },
-                  { label: "Top Career Match", value: selected?.results?.careers?.[0]?.title?.split(" ")?.[0] || "—", color: "#a5b4fc" },
+                  { label: "Assessments Taken", value: assessments.length, color: "#FF0080" },
+                  { label: "Roadmap Progress", value: `${progress}%`, color: "#00DFD8" },
+                  { label: "Milestones Done", value: `${completedCount}/${totalMonths}`, color: "#F5A623" },
+                  { label: "Top Career Match", value: selected?.results?.careers?.[0]?.title?.split(" ")?.[0] || "—", color: "#fbcfe8" },
                 ].map((stat, i) => (
                   <div key={i} style={{
-                    background: "rgba(255,255,255,0.03)",
+                    background: "rgba(255,255,255,0.02)",
                     border: "1px solid rgba(255,255,255,0.07)",
                     borderRadius: "16px", padding: "20px"
                   }}>
-                    <div style={{ fontSize: "26px", fontWeight: 700, color: stat.color, fontFamily: "'Syne', sans-serif" }}>
+                    <div style={{ fontSize: "26px", fontWeight: 700, color: stat.color, fontFamily: "'Outfit', sans-serif" }}>
                       {stat.value}
                     </div>
                     <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "4px" }}>{stat.label}</div>
@@ -189,18 +189,18 @@ export default function DashboardPage({ user, navigate }) {
               {/* Progress bar */}
               {selected && (
                 <div style={{
-                  background: "rgba(255,255,255,0.03)",
+                  background: "rgba(255,255,255,0.02)",
                   border: "1px solid rgba(255,255,255,0.07)",
                   borderRadius: "16px", padding: "24px", marginBottom: "28px"
                 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
                     <span style={{ fontWeight: 600 }}>Overall Roadmap Progress</span>
-                    <span style={{ color: "#10b981", fontWeight: 600 }}>{progress}%</span>
+                    <span style={{ color: "#00DFD8", fontWeight: 600 }}>{progress}%</span>
                   </div>
-                  <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: "100px", height: "10px" }}>
+                  <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: "100px", height: "10px" }}>
                     <div style={{
                       width: `${progress}%`, height: "100%",
-                      background: "linear-gradient(90deg, #6366f1, #10b981)",
+                      background: "linear-gradient(90deg, #FF0080, #00DFD8)",
                       borderRadius: "100px", transition: "width 0.6s ease"
                     }} />
                   </div>
@@ -210,11 +210,11 @@ export default function DashboardPage({ user, navigate }) {
               {/* Milestone tracker */}
               {selected?.results?.roadmap && (
                 <div style={{
-                  background: "rgba(255,255,255,0.03)",
+                  background: "rgba(255,255,255,0.02)",
                   border: "1px solid rgba(255,255,255,0.07)",
                   borderRadius: "16px", padding: "24px", marginBottom: "28px"
                 }}>
-                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 700, marginBottom: "20px" }}>
+                  <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "18px", fontWeight: 700, marginBottom: "20px" }}>
                     📅 6-Month Milestone Tracker
                   </h3>
                   {selected.results.roadmap.map((r, i) => (
@@ -228,8 +228,8 @@ export default function DashboardPage({ user, navigate }) {
                       }}>
                       <div style={{
                         width: 24, height: 24, borderRadius: "6px",
-                        border: `2px solid ${milestones[r.month] ? "#10b981" : "rgba(255,255,255,0.2)"}`,
-                        background: milestones[r.month] ? "#10b981" : "transparent",
+                        border: `2px solid ${milestones[r.month] ? "#00DFD8" : "rgba(255,255,255,0.2)"}`,
+                        background: milestones[r.month] ? "#00DFD8" : "transparent",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "14px", flexShrink: 0, transition: "all 0.2s"
                       }}>
@@ -253,11 +253,11 @@ export default function DashboardPage({ user, navigate }) {
               {/* Past assessments */}
               {assessments.length > 1 && (
                 <div style={{
-                  background: "rgba(255,255,255,0.03)",
+                  background: "rgba(255,255,255,0.02)",
                   border: "1px solid rgba(255,255,255,0.07)",
                   borderRadius: "16px", padding: "24px"
                 }}>
-                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "18px", fontWeight: 700, marginBottom: "16px" }}>
+                  <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "18px", fontWeight: 700, marginBottom: "16px" }}>
                     📁 Past Assessments
                   </h3>
                   {assessments.map((a, i) => (
@@ -278,7 +278,7 @@ export default function DashboardPage({ user, navigate }) {
                         </div>
                       </div>
                       <div style={{
-                        background: "rgba(99,102,241,0.15)", color: "#a5b4fc",
+                        background: "rgba(99,102,241,0.15)", color: "#fbcfe8",
                         padding: "4px 10px", borderRadius: "6px", fontSize: "12px"
                       }}>
                         {a.results?.careers?.[0]?.matchScore || "--"}% match

@@ -1,0 +1,22 @@
+﻿AA README.md
+ M backend/app.py
+ M backend/requirements.txt
+ M docker-compose.yml
+ M frontend/Dockerfile
+ M frontend/index.html
+ M frontend/src/App.jsx
+ M frontend/src/pages/AssessmentPage.jsx
+ M frontend/src/pages/DashboardPage.jsx
+ M frontend/src/pages/LandingPage.jsx
+ M frontend/src/pages/ResultsPage.jsx
+ M vercel.json
+?? backend/.env.example
+?? backend/out.txt
+?? backend/test_gemini.py
+?? frontend/fix-colors.js
+?? frontend/retheme.js
+?? frontend/src/pages/ProjectPage.jsx
+?? frontend/src/pages/QuizPage.jsx
+?? frontend/upgrade_theme.js
+?? git_status.txt
+?? status.txt

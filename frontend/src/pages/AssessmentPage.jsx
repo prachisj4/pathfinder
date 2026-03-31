@@ -169,8 +169,8 @@ navigate("results", { ...data, formData: form });
 
   return (
     <div style={{
-      minHeight: "100vh", background: "#0a0a0f", color: "#f0f0f0",
-      fontFamily: "'DM Sans', sans-serif", padding: "40px 20px"
+      minHeight: "100vh", background: "#020617", color: "#f0f0f0",
+      fontFamily: "'Plus Jakarta Sans', sans-serif", padding: "40px 20px"
     }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
@@ -179,8 +179,8 @@ navigate("results", { ...data, formData: form });
       <div style={{ maxWidth: "680px", margin: "0 auto" }}>
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
-          <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "20px", fontWeight: 800 }}>
-            🧭 PathFinder<span style={{ color: "#6366f1" }}>AI</span>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: "20px", fontWeight: 800 }}>
+            🧭 PathFinder<span style={{ color: "#FF0080" }}>AI</span>
           </div>
           <button onClick={() => navigate("landing")} style={{
             background: "none", border: "none", color: "rgba(255,255,255,0.4)",
@@ -194,12 +194,12 @@ navigate("results", { ...data, formData: form });
             <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)" }}>
               Step {step + 1} of {steps.length}
             </span>
-            <span style={{ fontSize: "13px", color: "#6366f1" }}>{Math.round(progress)}% complete</span>
+            <span style={{ fontSize: "13px", color: "#FF0080" }}>{Math.round(progress)}% complete</span>
           </div>
-          <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: "100px", height: "6px" }}>
+          <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: "100px", height: "6px" }}>
             <div style={{
               width: `${progress}%`, height: "100%",
-              background: "linear-gradient(90deg, #6366f1, #10b981)",
+              background: "linear-gradient(90deg, #FF0080, #00DFD8)",
               borderRadius: "100px", transition: "width 0.4s ease"
             }} />
           </div>
@@ -207,7 +207,7 @@ navigate("results", { ...data, formData: form });
             {steps.map((s, i) => (
               <div key={i} style={{
                 flex: 1, height: "4px", borderRadius: "2px",
-                background: i <= step ? "#6366f1" : "rgba(255,255,255,0.08)",
+                background: i <= step ? "#FF0080" : "rgba(255,255,255,0.12)",
                 transition: "background 0.3s"
               }} />
             ))}
@@ -216,12 +216,12 @@ navigate("results", { ...data, formData: form });
 
         {/* Card */}
         <div style={{
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          background: "rgba(255,255,255,0.02)",
+          border: "1px solid rgba(255,255,255,0.12)",
           borderRadius: "24px", padding: "40px"
         }}>
           <h2 style={{
-            fontFamily: "'Syne', sans-serif", fontSize: "28px",
+            fontFamily: "'Outfit', sans-serif", fontSize: "28px",
             fontWeight: 800, marginBottom: "8px", letterSpacing: "-0.5px"
           }}>{steps[step].title}</h2>
           <p style={{ color: "rgba(255,255,255,0.45)", marginBottom: "32px", fontSize: "15px" }}>
@@ -234,31 +234,31 @@ navigate("results", { ...data, formData: form });
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: "24px" }}>
           <button onClick={() => setStep(s => s - 1)} disabled={step === 0}
             style={{
-              background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
+              background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.1)",
               color: step === 0 ? "rgba(255,255,255,0.2)" : "white",
               padding: "14px 28px", borderRadius: "12px", cursor: step === 0 ? "default" : "pointer",
-              fontSize: "15px", fontFamily: "'DM Sans', sans-serif"
+              fontSize: "15px", fontFamily: "'Plus Jakarta Sans', sans-serif"
             }}>
             ← Previous
           </button>
           {step < steps.length - 1 ? (
             <button onClick={() => setStep(s => s + 1)} disabled={!canProceed()}
               style={{
-                background: canProceed() ? "linear-gradient(135deg, #6366f1, #8b5cf6)" : "rgba(99,102,241,0.3)",
+                background: canProceed() ? "linear-gradient(135deg, #FF0080, #7928CA)" : "rgba(99,102,241,0.3)",
                 border: "none", color: "white", padding: "14px 32px",
                 borderRadius: "12px", cursor: canProceed() ? "pointer" : "default",
-                fontSize: "15px", fontWeight: 600, fontFamily: "'DM Sans', sans-serif"
+                fontSize: "15px", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif"
               }}>
               Next →
             </button>
           ) : (
             <button onClick={handleSubmit} disabled={!canProceed() || loading}
               style={{
-                background: canProceed() && !loading ? "linear-gradient(135deg, #10b981, #059669)" : "rgba(16,185,129,0.3)",
+                background: canProceed() && !loading ? "linear-gradient(135deg, #00DFD8, #06b6d4)" : "rgba(16,185,129,0.3)",
                 border: "none", color: "white", padding: "14px 32px",
                 borderRadius: "12px", cursor: canProceed() && !loading ? "pointer" : "default",
-                fontSize: "15px", fontWeight: 600, fontFamily: "'DM Sans', sans-serif",
-                boxShadow: "0 0 30px rgba(16,185,129,0.3)"
+                fontSize: "15px", fontWeight: 600, fontFamily: "'Plus Jakarta Sans', sans-serif",
+                boxShadow: "0 0 40px rgba(0, 223, 216, 0.4)"
               }}>
               {loading ? "🔮 Analyzing your profile..." : "✨ Get My Career Roadmap"}
             </button>
@@ -274,15 +274,15 @@ const labelStyle = {
   marginBottom: "8px", fontWeight: 500
 };
 const inputStyle = {
-  width: "100%", background: "rgba(255,255,255,0.06)",
+  width: "100%", background: "rgba(255,255,255,0.12)",
   border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px",
   padding: "12px 16px", color: "white", fontSize: "15px",
-  fontFamily: "'DM Sans', sans-serif", outline: "none", boxSizing: "border-box"
+  fontFamily: "'Plus Jakarta Sans', sans-serif", outline: "none", boxSizing: "border-box"
 };
 const chipStyle = (active) => ({
   background: active ? "rgba(99,102,241,0.25)" : "rgba(255,255,255,0.05)",
-  border: active ? "1px solid rgba(99,102,241,0.6)" : "1px solid rgba(255,255,255,0.08)",
-  color: active ? "#a5b4fc" : "rgba(255,255,255,0.6)",
+  border: active ? "1px solid rgba(99,102,241,0.6)" : "1px solid rgba(255,255,255,0.12)",
+  color: active ? "#fbcfe8" : "rgba(255,255,255,0.6)",
   padding: "8px 16px", borderRadius: "100px", cursor: "pointer",
-  fontSize: "14px", transition: "all 0.2s", fontFamily: "'DM Sans', sans-serif"
+  fontSize: "14px", transition: "all 0.2s", fontFamily: "'Plus Jakarta Sans', sans-serif"
 });

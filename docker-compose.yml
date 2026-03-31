@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
     volumes:
       - ./backend/serviceAccountKey.json:/app/serviceAccountKey.json:ro
     restart: unless-stopped

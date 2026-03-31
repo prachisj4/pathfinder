@@ -18,9 +18,9 @@ export default function LandingPage({ user, navigate }) {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "#0a0a0f",
+      background: "#020617",
       color: "#f0f0f0",
-      fontFamily: "'DM Sans', sans-serif",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
       overflow: "hidden",
       position: "relative"
     }}>
@@ -28,20 +28,20 @@ export default function LandingPage({ user, navigate }) {
       <div style={{
         position: "fixed", top: "-20%", right: "-10%",
         width: "600px", height: "600px",
-        background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(255,0,128,0.15) 0%, transparent 70%)",
         borderRadius: "50%", pointerEvents: "none", zIndex: 0,
         animation: "float 8s ease-in-out infinite"
       }} />
       <div style={{
         position: "fixed", bottom: "-20%", left: "-10%",
         width: "500px", height: "500px",
-        background: "radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(0,223,216,0.12) 0%, transparent 70%)",
         borderRadius: "50%", pointerEvents: "none", zIndex: 0,
         animation: "float 10s ease-in-out infinite reverse"
       }} />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
+        400;500;600;700&family=Syne:wght@700;800&display=swap');
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
         @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
         @keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
@@ -50,35 +50,36 @@ export default function LandingPage({ user, navigate }) {
         .hero-cta { animation: fadeUp 0.8s 0.4s ease both; }
         .hero-cards { animation: fadeUp 0.8s 0.6s ease both; }
         .glow-btn {
-          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          background: linear-gradient(135deg, #FF0080, #7928CA);
           border: none; color: white; padding: 16px 36px;
           border-radius: 14px; font-size: 17px; font-weight: 600;
           cursor: pointer; transition: all 0.3s;
-          box-shadow: 0 0 30px rgba(99,102,241,0.4);
-          font-family: 'DM Sans', sans-serif;
+          box-shadow: 0 0 40px rgba(255, 0, 128, 0.5);
+          font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .glow-btn:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(99,102,241,0.6); }
+        .glow-btn:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(255, 0, 128, 0.7); }
         .google-btn {
-          background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12);
           color: white; padding: 14px 28px; border-radius: 12px;
           font-size: 15px; font-weight: 500; cursor: pointer;
-          transition: all 0.3s; font-family: 'DM Sans', sans-serif;
+          transition: all 0.3s; font-family: 'Plus Jakarta Sans', sans-serif;
           display: flex; align-items: center; gap: 10px;
         }
         .google-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); }
         .stat-card {
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 16px; padding: 24px;
           text-align: center; flex: 1;
         }
         .feature-card {
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 20px; padding: 28px 24px;
           transition: all 0.3s;
         }
-        .feature-card:hover {
+        .feature-card { backdrop-filter: blur(16px); }
+        .feature-card:hover { box-shadow: 0 10px 40px -10px rgba(0,223,216,0.3);
           background: rgba(99,102,241,0.08);
           border-color: rgba(99,102,241,0.3);
           transform: translateY(-4px);
@@ -96,12 +97,12 @@ export default function LandingPage({ user, navigate }) {
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <div style={{
             width: 36, height: 36,
-            background: "linear-gradient(135deg, #6366f1, #10b981)",
+            background: "linear-gradient(135deg, #00DFD8, #007CF0)",
             borderRadius: "10px", display: "flex", alignItems: "center",
             justifyContent: "center", fontSize: "18px"
           }}>🧭</div>
-          <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "20px", fontWeight: 800, letterSpacing: "-0.5px" }}>
-            PathFinder<span style={{ color: "#6366f1" }}>AI</span>
+          <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: "20px", fontWeight: 800, letterSpacing: "-0.5px" }}>
+            PathFinder<span style={{ color: "#FF0080" }}>AI</span>
           </span>
         </div>
         <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
@@ -128,20 +129,20 @@ export default function LandingPage({ user, navigate }) {
         <div className="hero-title" style={{
           display: "inline-block", background: "rgba(99,102,241,0.15)",
           border: "1px solid rgba(99,102,241,0.3)", borderRadius: "100px",
-          padding: "6px 18px", fontSize: "13px", color: "#a5b4fc",
+          padding: "6px 18px", fontSize: "13px", color: "#fbcfe8",
           letterSpacing: "1px", textTransform: "uppercase", marginBottom: "28px"
         }}>
           🚀 AI-Powered Career Guidance
         </div>
 
         <h1 className="hero-title" style={{
-          fontFamily: "'Syne', sans-serif", fontSize: "clamp(42px, 6vw, 72px)",
+          fontFamily: "'Outfit', sans-serif", fontSize: "clamp(42px, 6vw, 72px)",
           fontWeight: 800, lineHeight: 1.1, margin: "0 0 24px",
           letterSpacing: "-2px"
         }}>
           Discover Your Perfect<br />
           <span style={{
-            background: "linear-gradient(135deg, #6366f1 0%, #10b981 100%)",
+            background: "linear-gradient(135deg, #FF0080 0%, #00DFD8 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
           }}>Career Path</span>
         </h1>
@@ -187,7 +188,7 @@ export default function LandingPage({ user, navigate }) {
             { num: "6mo", label: "Personalized Roadmap" },
           ].map((s, i) => (
             <div key={i} className="stat-card">
-              <div style={{ fontSize: "28px", fontWeight: 700, color: "#a5b4fc", fontFamily: "'Syne', sans-serif" }}>{s.num}</div>
+              <div style={{ fontSize: "28px", fontWeight: 700, color: "#fbcfe8", fontFamily: "'Outfit', sans-serif" }}>{s.num}</div>
               <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)", marginTop: "4px" }}>{s.label}</div>
             </div>
           ))}
@@ -197,10 +198,10 @@ export default function LandingPage({ user, navigate }) {
       {/* Features */}
       <div id="features" style={{ maxWidth: "1100px", margin: "0 auto", padding: "60px 40px", position: "relative", zIndex: 10 }}>
         <h2 style={{
-          fontFamily: "'Syne', sans-serif", fontSize: "38px", fontWeight: 800,
+          fontFamily: "'Outfit', sans-serif", fontSize: "38px", fontWeight: 800,
           textAlign: "center", marginBottom: "48px", letterSpacing: "-1px"
         }}>
-          Everything you need to <span style={{ color: "#6366f1" }}>find your path</span>
+          Everything you need to <span style={{ color: "#FF0080" }}>find your path</span>
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           {[
@@ -223,7 +224,7 @@ export default function LandingPage({ user, navigate }) {
       {/* How it works */}
       <div id="how" style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 40px 80px", position: "relative", zIndex: 10 }}>
         <h2 style={{
-          fontFamily: "'Syne', sans-serif", fontSize: "38px", fontWeight: 800,
+          fontFamily: "'Outfit', sans-serif", fontSize: "38px", fontWeight: 800,
           textAlign: "center", marginBottom: "48px", letterSpacing: "-1px"
         }}>
           How it works
@@ -237,14 +238,14 @@ export default function LandingPage({ user, navigate }) {
           ].map((h, i) => (
             <div key={i} style={{
               display: "flex", gap: "24px", alignItems: "flex-start",
-              background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
+              background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.12)",
               borderRadius: "16px", padding: "24px"
             }}>
               <div style={{
                 minWidth: "48px", height: "48px",
-                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                background: "linear-gradient(135deg, #FF0080, #7928CA)",
                 borderRadius: "12px", display: "flex", alignItems: "center",
-                justifyContent: "center", fontFamily: "'Syne', sans-serif",
+                justifyContent: "center", fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800, fontSize: "16px"
               }}>{h.step}</div>
               <div>
@@ -270,7 +271,7 @@ export default function LandingPage({ user, navigate }) {
 
       {/* Footer */}
       <footer style={{
-        borderTop: "1px solid rgba(255,255,255,0.06)",
+        borderTop: "1px solid rgba(255,255,255,0.12)",
         padding: "24px 60px", textAlign: "center",
         color: "rgba(255,255,255,0.25)", fontSize: "13px", position: "relative", zIndex: 10
       }}>
